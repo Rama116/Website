@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         *{
@@ -18,6 +19,7 @@
             height: 100vh;
             width: 100vw;
             display: grid;
+            position: relative;
             /* grid-template-columns: auto auto auto;  */
             grid-template-columns: repeat(3,auto);
             grid-template-rows: repeat(3,33vh);
@@ -25,16 +27,12 @@
         }
         .red{
             background-color: red;
-            grid-row: 3/4;
-            grid-column: -2/-1;
         }
         .blue{
             background-color: blue; 
         }
         .green{
             background-color: green;
-            grid-row: 2/3;
-            grid-column: 2/3;
         }
 
         @media only screen and (max-width:900px)
@@ -72,6 +70,40 @@
             }
         }
 
+        @keyframes myanimation {
+            0%{
+                transform: translate3D(-100%);
+                rotate: 90deg;
+                scale: 0%;
+            }
+            50%{
+                transform: translate3D(0%);
+                rotate: 180deg;
+                scale: 50%;
+            }
+            100%{
+                rotate: 360deg;
+                transform: translate3D(100%);
+                scale: 100%;
+            }
+        }
+
+        .green {
+            animation: 0s myanimation reverse ;
+        }
+        .red {
+            animation: 0s myanimation alternate ;
+        }
+        .blue {
+            animation: 0s myanimation both ;
+        }
+
+        .fa{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
     </style>
 </head>
 <body>
@@ -79,6 +111,9 @@
         <div class="b red">one</div>
         <div class="b blue">two</div>
         <div class="b green">three</div>
+        <i class="fa fa-bicycle" style="font-size:48px;color:black"></i>
     </div>
+
+    
 </body>
 </html>
