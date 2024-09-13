@@ -22,9 +22,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 65vh;
+            height: 70vh;
             width: 30vw;
-            background-color: rgb(131, 132, 129);
+            background-color: rgb(99, 75, 187);
+            box-shadow: 5px 10px 18px rgb(59, 37, 141);
         }   
 
         .inner{
@@ -38,7 +39,7 @@
         }
 
         input{
-            padding: 1rem;
+            padding: 10px;
             font-weight: bold;
             border: none;
             width: 90%;
@@ -67,11 +68,39 @@
             <input type="text" id="name" name="name" placeholder="UserName"><br>
             <input type="email" id="email" name="email" placeholder="Email"><br>
             <input type="tel" id="tel" name="tel" placeholder="Phone Number"><br>
-            <input type="password" id="name" name="name" placeholder="Password"><br>
-            <button class="btn" type="submit">Submit</button>
+            <input type="password" id="pass" name="pass" placeholder="Password"><br>
+            <button onclick="fore(e)" class="btn" type="submit">Submit</button>
         </form>
 
 
     </div>
 </body>
+
+<script>
+        function fore(e){
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("tel").value;
+            let pass = document.getElementById("pass").value;
+            console.log(name);
+            //document.write(name);
+        }
+
+        let arr1 = [1,2,3]
+        let arr2 = ['a','b','c']
+        let arr3 = [...arr1,"true",...arr2]
+        console.log(arr3)    
+
+        const data= {
+            username:name,
+            useremail:email,
+            userphone:tel,
+            userpass:pass
+        }
+
+        const {username,useremail,userphone,userpass} = data
+        console.log(userphone)
+        console.log(username)
+</script>
 </html>
